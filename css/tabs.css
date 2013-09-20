@@ -1,0 +1,123 @@
+body {
+  background: #fff url('http://i111.photobucket.com/albums/n131/silversoldier_real/white-noise_zps64578b0e.jpg') repeat;
+}
+
+.tabs {
+  position: relative;
+  padding-top: 10px;
+  margin: 40px auto;
+  width: 100%;
+  font-family: 'Open Sans Condensed', 'Arial Narrow', serif;
+  overflow: hidden;
+}
+
+.tabs input { 
+  position: absolute;
+  z-index: 1000;
+  width: 120px;
+  height: 40px;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;  
+}
+
+.tabs label {  
+  border-radius: 6px 6px 0 0; 
+  position: relative;
+  display: block;
+  float: left; 
+  height: 30px;
+  widht: 120px;
+  align: center;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;  
+  padding: 0 15px;
+  background: #363539;
+  line-height: 30px;
+  box-shadow: 0 0 2px #111;
+  -webkit-transition: .2s;
+  z-index: 5;
+}
+
+.tabs label:after {
+    content: '';
+    display: block;
+    background: #363539;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    height: 8px;
+    width: 100%;
+    opacity: 0;
+    z-index: -1;
+}
+
+
+.tabs input:checked + label {
+    background: #f2f2f9;
+    color: #363539;
+    z-index: 6;
+}
+
+.content{
+   background: #f2f2f9;
+   clear: both;
+   position: relative;
+   width: 100%;
+   height: 370px;
+   z-index: 10;
+   overflow: auto;
+}
+
+.content div {
+  position: absolute;
+  top: 0;
+  left: 0; 
+  padding: 10px 40px;
+  z-index: 1;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all linear 0.1s;  
+}
+
+.content div h2,
+.content div h3{
+    color: #363539;
+}
+.content div p {
+    font-size: 15px;
+    line-height: 22px;    
+    text-align: left;
+    margin: 0 0 10px 0;
+    color: #555;
+    padding-left: 15px;
+    font-family: 'arial narrow';
+    border-left: 8px solid rgba(63,148,148, 0.1);
+}
+
+.tabs input:hover + label , .tabs label:hover {
+  -webkit-transform: translate(0px, -8px);
+}
+.tabs input:checked:hover + label , .tabs label:checked:hover {
+  -webkit-transform: translate(0px, 0);
+} 
+
+.tabs input:hover + label:after , .tabs label:hover label:after {
+  opacity: 1;
+  width: 1000px;
+}
+
+
+.tabs input.tab-selector-1:checked ~ .content .content-1,
+.tabs input.tab-selector-2:checked ~ .content .content-2,
+.tabs input.tab-selector-3:checked ~ .content .content-3
+ {
+    z-index: 100;
+    opacity: 1;
+    overflow:visible;
+    height: auto;
+    transition: all ease-out 0.2s 0.1s;
+}
+
